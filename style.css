@@ -1,6 +1,6 @@
 body {
     font-family: 'Pretendard', sans-serif;
-    background: #0d0d0d;      /* 전체 배경을 로고 배경과 맞추고 싶다면 */
+    background: #ffffff;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -9,22 +9,25 @@ body {
 .card {
     margin-top: 80px;
     padding: 25px;
-    color: #ffffff;           /* 어두운 배경이면 글자색도 흰색 추천 */
 }
 
+/* 🔥 로고 박스를 정사각형 + 원하는 크기로 조절 */
 .logo {
-    width: 800px;             /* ← 여기만 조정하면서 크기 맞추면 됨 */
+    width: 300px;     /* ← 여기서 크기 원하는대로 조절 */
+    height: 300px;    /* ← 세로도 고정 */
     margin: 0 auto 20px auto;
     background-color: #0d0d0d;
-    border-radius: 12px;
-    padding: 10px;
+    border-radius: 12px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* 🔥 로고 이미지가 찌그러지지 않도록 정사각형에 정확히 맞추기 */
 .logo img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%;
+    height: 100%;
+    object-fit: contain;   /* cover → contain 으로 변경 */
 }
 
 h1 {
@@ -34,11 +37,36 @@ h1 {
 
 .eng {
     font-size: 15px;
-    color: #cccccc;
+    color: #555;
 }
 
 .role {
     margin: 2px 0;
-    color: #e0e0e0;
+    color: #333;
     font-size: 16px;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    margin: 5px;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #777;
+}
+
+#qrcode {
+    margin-top: 20px;
 }
