@@ -23,8 +23,8 @@ body {
 
 /* ✅ 로고 박스 : 정사각형 + 크기 조절 가능 */
 .logo {
-    width: 300px;      /* ← 여기 숫자만 바꾸면 진짜로 크기 바뀜 */
-    height: 300px;
+    width: 300px !important;      /* ← 여기 숫자만 바꾸면 진짜로 크기 바뀜 */
+    height: 300px !important;
     margin: 0 auto 20px auto;
     background-color: #0d0d0d;
     display: flex;
