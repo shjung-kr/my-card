@@ -6,11 +6,20 @@
     <title>Seong-hoon Jung | Mobile Card</title>
     <link rel="stylesheet" href="style.css?v=1.0">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://shjung-kr.github.io/my-card",
+        width: 160,
+        height: 160,
+    });
+</script>
 <body>
 
 <div class="card">
-    <div class="logo">
-        <img src="Proofence_logo.png" alt="Proofence Logo">
+    <div class="logo-warp">
+        <img class="log-main" src="Proofence_logo.png" alt="Proofence Logo">
+        <img class=""log-qr" src=""qrcode.png" alt="QR Code Logo">
     </div>
 
     <h1>정성훈 <span class="eng">Seong-hoon Jung</span></h1>
@@ -31,14 +40,7 @@
 
 <footer>© 2025 Seong-hoon Jung</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-    new QRCode(document.getElementById("qrcode"), {
-        text: "https://shjung-kr.github.io/my-card",
-        width: 160,
-        height: 160,
-    });
-</script>
+
 
 </body>
 </html>
