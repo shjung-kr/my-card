@@ -13,7 +13,7 @@ body {
 }
 
 .logo {
-    width: 180px;             /* ← 여기만 조정하면서 크기 맞추면 됨 */
+    width: 800px;             /* ← 여기만 조정하면서 크기 맞추면 됨 */
     margin: 0 auto 20px auto;
     background-color: #0d0d0d;
     border-radius: 12px;
