@@ -7,7 +7,7 @@ body {
 }
 
 .card {
-    margin-top: 60px;   /* 너무 아래로 내려가는 거 줄임 */
+    margin-top: 20px;   /* 너무 아래로 내려가는 거 줄임 */
     padding: 25px;
 }
 
