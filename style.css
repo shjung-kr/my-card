@@ -1,3 +1,8 @@
+/* 전체 기본 세팅 */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Pretendard', sans-serif;
     background: #ffffff;
@@ -6,43 +11,41 @@ body {
     text-align: center;
 }
 
-/* 카드 전체 래퍼 */
+/* 카드 전체 */
 .card {
-    padding: 24px 16px 40px;
+    padding: 16px 16px 40px 16px;
 }
 
-/* ✅ 로고 + QR 겹치는 박스 */
+/* 로고 + QR 랩퍼 */
 .logo-wrap {
-    position: relative;          /* 자식(QR)의 absolute 기준 */
-    display: inline-block;
-    width: 260px;                /* 로고 전체 폭 (원하는 대로 조절) */
-    max-width: 70vw;             /* 모바일에서 너무 커지지 않게 */
+    position: relative;
+    width: 260px;         /* 로고 전체 폭 */
+    max-width: 70vw;      /* 모바일에서 화면 밖으로 안 나가게 */
+    margin: 0 auto 16px auto;
 }
 
-/* 로고 이미지 */
+/* 메인 로고 */
 .logo-main {
     width: 100%;
-    height: auto;
     display: block;
 }
 
-/* ✅ QR 코드: 로고 위에 겹치기 */
+/* QR 코드: 로고 위에 겹치게 */
 .logo-qr {
     position: absolute;
-    bottom: 8px;                 /* 로고 안에서 위치 조정 */
     right: 8px;
-    width: 70px;
-    height: 70px;
-    background: #ffffff;         /* 살짝 흰 배경 깔고 */
+    bottom: 8px;
+    width: 72px;
+    height: 72px;
+    background-color: #ffffff;
     padding: 4px;
-    box-sizing: content-box;
-    border-radius: 10px;         /* 조금 둥글게 */
+    border-radius: 8px;
 }
 
-/* 텍스트 영역 */
+/* 텍스트 스타일 */
 h1 {
     font-size: 22px;
-    margin: 16px 0 5px 0;
+    margin: 8px 0 4px 0;
 }
 
 .eng {
@@ -56,15 +59,15 @@ h1 {
     font-size: 16px;
 }
 
-/* 버튼들 */
+/* 버튼 영역 */
 .buttons {
-    margin-top: 22px;
+    margin-top: 20px;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 18px;
-    margin: 5px;
+    padding: 10px 16px;
+    margin: 4px;
     background: #000;
     color: #fff;
     border-radius: 10px;
@@ -74,7 +77,7 @@ h1 {
 
 /* 푸터 */
 footer {
-    margin-top: 30px;
+    margin-top: 24px;
     font-size: 12px;
     color: #777;
 }
