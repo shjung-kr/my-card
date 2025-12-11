@@ -6,36 +6,42 @@ body {
     text-align: center;
 }
 
+/* 카드 전체 */
 .card {
-    padding: 24px 16px;
+    margin-top: 0;     /* 핸드폰 상단에 딱 붙게 */
+    padding: 20px;
 }
 
-/* ✅ 로고 + QR 겹치는 래퍼 */
+/* 로고 + QR 묶음 */
 .logo-wrap {
     position: relative;
-    width: 260px;          /* ← 로고 전체 크기 조절 */
-    margin: 0 auto 20px;
+    display: inline-block;
+    margin: 0 auto 20px auto;
 }
 
-/* 메인 로고 이미지 */
+/* 메인 로고 이미지 크기 */
 .logo-main {
-    width: 100%;
+    width: 260px;   /* 여기 숫자로 로고 크기 조절 (예: 200, 300, 400...) */
+    height: auto;
     display: block;
 }
 
-/* QR을 로고 위에 겹쳐 배치 */
+/* QR 코드가 들어갈 박스 (로고 위에 겹치기) */
 .logo-qr {
     position: absolute;
-    right: 8px;            /* 로고 안에서 위치 조정 */
-    bottom: 8px;
+    bottom: -10px;    /* 로고에서 조금 내려오게 */
+    right: -10px;     /* 오른쪽 바깥으로 살짝 */
     width: 60px;
     height: 60px;
-    background: #ffffff;   /* 흰 배경 깔고 */
-    padding: 4px;
-    border-radius: 8px;
-    box-sizing: content-box;
 }
 
+/* qrcode.js가 생성하는 img 크기 맞추기 */
+.logo-qr img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 텍스트 스타일들 */
 h1 {
     font-size: 22px;
     margin-bottom: 5px;

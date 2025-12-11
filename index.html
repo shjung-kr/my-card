@@ -9,9 +9,12 @@
 <body>
 
 <div class="card">
-    <!-- 로고 + QR 겹치는 박스 -->
+    <!-- 로고 + QR 겹치는 영역 -->
     <div class="logo-wrap">
-        <img class="logo-main" src="Proofence_logo.png" alt="Proofence Logo">
+        <!-- 🔥 실제 로고 파일 이름 정확히! (대소문자 포함) -->
+        <img class="logo-main" src="Proofence_Logo.png" alt="Proofence Logo">
+
+        <!-- 여기 안에 QR 코드가 생성됨 -->
         <div id="qrcode" class="logo-qr"></div>
     </div>
 
@@ -31,13 +34,14 @@
 
 <footer>© 2025 Seong-hoon Jung</footer>
 
-<!-- 🔹 JS는 항상 body 맨 아래에 -->
+<!-- 🔻 QR 코드 스크립트는 body 맨 아래에 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-    const qr = new QRCode(document.getElementById("qrcode"), {
+    // 페이지가 다 그려진 뒤에 실행되므로 #qrcode를 제대로 찾음
+    new QRCode(document.getElementById("qrcode"), {
         text: "https://shjung-kr.github.io/my-card",
-        width: 60,   // QR 실제 크기
-        height: 60
+        width: 60,
+        height: 60,
     });
 </script>
 
