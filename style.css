@@ -1,6 +1,6 @@
 body {
     font-family: 'Pretendard', sans-serif;
-    background: #ffffff;
+    background: #0d0d0d;      /* 전체 배경을 로고 배경과 맞추고 싶다면 */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -8,85 +8,23 @@ body {
 
 .card {
     margin-top: 80px;
-    padding: auto;
-}
-
-.logo {
-    width: 200px;            /* <- 로고 사이즈 조절 */
-    height: 200px;
-    margin: 0 auto 20px auto;
-    background-color: #0d0d0d; /* 로고 background = 전체 background */
-    border-radius: 50%;     /* 필요하면 제거 가능 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.logo img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
-    display: block;
-}
-
-h1 {
-    font-size: 22px;
-    margin-bottom: 5px;
-}
-
-.eng {
-    font-size: 15px;
-    color: #555;
-}
-
-.role {
-    margin: 2px 0;
-    color: #333;
-    font-size: 16px;
-}
-
-.buttons {
-    margin-top: 25px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 18px;
-    margin: 5px;
-    background: #000;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 12px;
-    color: #777;
-}
-
-#qrcode {
-    margin-top: 20px;
-}
-
-body {
-    font-family: 'Pretendard', sans-serif;
-    background: #ffffff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.card {
-    margin-top: 40px;
     padding: 25px;
+    color: #ffffff;           /* 어두운 배경이면 글자색도 흰색 추천 */
 }
 
 .logo {
-    width: 110px;
-    margin-bottom: 20px;
+    width: 180px;             /* ← 여기만 조정하면서 크기 맞추면 됨 */
+    margin: 0 auto 20px auto;
     background-color: #0d0d0d;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 h1 {
@@ -96,36 +34,11 @@ h1 {
 
 .eng {
     font-size: 15px;
-    color: #555;
+    color: #cccccc;
 }
 
 .role {
     margin: 2px 0;
-    color: #333;
+    color: #e0e0e0;
     font-size: 16px;
-}
-
-.buttons {
-    margin-top: 25px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 18px;
-    margin: 5px;
-    background: #000;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 12px;
-    color: #777;
-}
-
-#qrcode {
-    margin-top: 20px;
 }
