@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+BEGIN:VCARD
+VERSION:3.0
+N:Jung;Seong-hoon;;;
+FN:Seong-hoon Jung
+ORG:Proofence;
+TITLE:Founder / COO / Ontology Developer
+TEL:010-3769-6543
+EMAIL:shjung.kr@gmail.com
+END:VCARD
+=======
+BEGIN:VCARD
+VERSION:3.0
+N:Jung;Seong-hoon;;;
+FN:Seong-hoon Jung
+ORG:Proofence;
+TITLE:Founder / COO / Ontology Developer
+TEL:010-3769-6543
+EMAIL:shjung.kr@gmail.com
+END:VCARD
+>>>>>>> b8f4086951723f46e56331ae03696cd3d62e2885
