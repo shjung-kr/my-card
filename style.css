@@ -13,8 +13,8 @@ body {
 }
 
 .logo {
-    width: 150px;            /* <- 로고 사이즈 조절 */
-    height: 150px;
+    width: auto;            /* <- 로고 사이즈 조절 */
+    height: auto;
     margin: 0 auto 20px auto;
     background-color: #0d0d0d; /* 로고 background = 전체 background */
     border-radius: 12px;     /* 필요하면 제거 가능 */
