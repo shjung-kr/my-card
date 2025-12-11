@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seong-hoon Jung | Mobile Card</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -17,28 +17,28 @@
     <p class="role">Proofence Founder</p>
     <p class="role">SJ Motors COO</p>
     <p class="role">Ontology Developer</p>
-    <p class="role"> 010-3769-6543</p>
-    <p class="role"> shjung.kr@gmail.com</p>
-
+    <p class="role">010-3769-6543</p>
+    <p class="role">shjung.kr@gmail.com</p>
 
     <div class="buttons">
         <a href="tel:010-3769-6543" class="btn">Call</a>
         <a href="mailto:shjung.kr@gmail.com" class="btn">Email</a>
         <a href="https://github.com/shjung-kr" class="btn">GitHub</a>
     </div>
+
     <div id="qrcode"></div>
 </div>
 
+<footer>© 2025 Seong-hoon Jung</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
+    new QRCode(document.getElementById("qrcode"), {
         text: "https://shjung-kr.github.io/my-card",
         width: 160,
         height: 160,
     });
 </script>
-
-<footer>© 2025 Seong-hoon Jung</footer>
 
 </body>
 </html>

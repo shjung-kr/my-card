@@ -1,34 +1,44 @@
+/* 기본 리셋 */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 */
 body {
     font-family: 'Pretendard', sans-serif;
     background: #ffffff;
-    margin: 0;
-    padding: 0;
     text-align: center;
 }
 
+/* 명함 전체 박스 */
 .card {
-    margin-top: 0px;   /* 너무 아래로 내려가는 거 줄임 */
-    padding: 0px;
+    margin: 0;
+    padding: 16px;
 }
 
-/* ✅ 정사각형 로고 박스 + 크기 조절 */
+/* ✅ 로고 박스 : 정사각형 + 크기 조절 가능 */
 .logo {
-    width: 300px;      /* ← 여기 숫자만 바꾸면 크기 조절 가능 (예: 200, 400 등) */
+    width: 300px;      /* ← 여기 숫자만 바꾸면 진짜로 크기 바뀜 */
     height: 300px;
     margin: 0 auto 20px auto;
-    background-color: #0d0d0d;  /* 배경색 */
+    background-color: #0d0d0d;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border-radius: 12px;  네모 틀 유지하려면 이거 주석 그대로 두기 */
 }
 
 /* ✅ 로고 이미지 : 네모 + 비율 유지 */
 .logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* 찌그러지지 않게 */
-    border-radius: 0;      /* 🔥 동그라미 되는 거 강제로 차단 */
+    object-fit: contain;
+    border-radius: 0;   /* 동그랗게 되는 것 방지 */
+    display: block;
 }
 
 h1 {
