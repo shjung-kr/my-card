@@ -23,8 +23,8 @@ body {
 
 /* ✅ 로고 박스 : 정사각형 + 크기 조절 가능 */
 .logo {
-    width: 300px !important;      /* ← 여기 숫자만 바꾸면 진짜로 크기 바뀜 */
-    height: 300px !important;
+    width: 150px !important;      /* ← 여기 숫자만 바꾸면 진짜로 크기 바뀜 */
+    height: 80px !important;
     margin: 0 auto 20px auto;
     background-color: #0d0d0d;
     display: flex;
@@ -34,8 +34,8 @@ body {
 
 /* ✅ 로고 이미지 : 네모 + 비율 유지 */
 .logo img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
     border-radius: 0;   /* 동그랗게 되는 것 방지 */
     display: block;
