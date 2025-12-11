@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seong-hoon Jung | Mobile Card</title>
-    <link rel="stylesheet" href="style.css?v=2.0">
+    <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
 
 <div class="card">
     <!-- 로고 + QR 겹치는 영역 -->
     <div class="logo-wrap">
-        <!-- 🔥 실제 로고 파일 이름 정확히! (대소문자 포함) -->
-        <img class="logo-main" src="Proofence_Logo.png" alt="Proofence Logo">
-
-        <!-- 여기 안에 QR 코드가 생성됨 -->
+        <!-- ✅ 여기 파일 이름이 실제 로고 파일이랑 꼭 같아야 함 -->
+        <img class="logo-main" src="Proofence_logo.png" alt="Proofence Logo">
         <div id="qrcode" class="logo-qr"></div>
     </div>
 
@@ -34,17 +32,22 @@
 
 <footer>© 2025 Seong-hoon Jung</footer>
 
-<!-- 🔻 QR 코드 스크립트는 body 맨 아래에 -->
+<!-- ✅ 스크립트는 항상 body 맨 아래 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-    // 페이지가 다 그려진 뒤에 실행되므로 #qrcode를 제대로 찾음
-    new QRCode(document.getElementById("qrcode"), {
-        text: "https://shjung-kr.github.io/my-card",
-        width: 60,
-        height: 60,
+    document.addEventListener("DOMContentLoaded", function () {
+        const qrContainer = document.getElementById("qrcode");
+
+        new QRCode(qrContainer, {
+            text: "https://shjung-kr.github.io/my-card",   // <- 여기 링크만 바꾸면 QR 자동 변경
+            width: 70,
+            height: 70,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
     });
 </script>
 
 </body>
 </html>
-
