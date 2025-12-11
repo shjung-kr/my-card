@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seong-hoon Jung | Mobile Card</title>
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Card</title>
+    <link rel="stylesheet" href="style.css?v=1.0" />
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-    new QRCode(document.getElementById("qrcode"), {
-        text: "https://shjung-kr.github.io/my-card",
-        width: 160,
-        height: 160,
-    });
-</script>
+
 <body>
 
 <div class="card">
-    <div class="logo-warp">
-        <img class="log-main" src="Proofence_logo.png" alt="Proofence Logo">
-        <img class="log-qr" src="qrcode.png" alt="QR Code Logo">
+    <div class="logo-wrap">
+        <img class="logo-main" src="Proofence_logo.png" alt="Proofence Logo">
+        <img class="logo-qr" src="qrcode.png" alt="QR Code Logo">
     </div>
 
     <h1>정성훈 <span class="eng">Seong-hoon Jung</span></h1>
@@ -34,14 +27,8 @@
         <a href="mailto:shjung.kr@gmail.com" class="btn">Email</a>
         <a href="https://github.com/shjung-kr" class="btn">GitHub</a>
     </div>
-
-    <div id="qrcode"></div>
 </div>
 
 <footer>© 2025 Seong-hoon Jung</footer>
-
-
-
 </body>
 </html>
-
