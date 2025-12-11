@@ -8,7 +8,7 @@ body {
 
 .card {
     margin-top: 0px;   /* 너무 아래로 내려가는 거 줄임 */
-    padding: 25px;
+    padding: 0px;
 }
 
 /* ✅ 정사각형 로고 박스 + 크기 조절 */
