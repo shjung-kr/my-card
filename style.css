@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 body {
     font-family: 'Pretendard', sans-serif;
     background: #ffffff;
@@ -19,8 +19,8 @@ body {
     background-color: #0d0d0d; /* 로고 background = 전체 background */
     border-radius: 12px;     /* 필요하면 제거 가능 */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    
 }
 .logo img {
     width: 100%;
@@ -69,7 +69,7 @@ footer {
 #qrcode {
     margin-top: 20px;
 }
-=======
+
 body {
     font-family: 'Pretendard', sans-serif;
     background: #ffffff;
@@ -129,4 +129,3 @@ footer {
 #qrcode {
     margin-top: 20px;
 }
->>>>>>> b8f4086951723f46e56331ae03696cd3d62e2885
