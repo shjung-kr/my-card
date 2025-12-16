@@ -26,6 +26,7 @@
         <a href="tel:010-3769-6543" class="btn">Call</a>
         <a href="mailto:shjung.kr@gmail.com" class="btn">Email</a>
         <a href="https://github.com/shjung-kr" class="btn">GitHub</a>
+        <button class="btn" onclick="addBookmark()">북마크추가</button>
     </div>
 </div>
 
@@ -42,6 +43,28 @@
             width: 72,
             height: 72,
         });
+    }
+    function addBookmark() {
+        
+        const ua = navigator.userAgent.toLowerCase();
+
+        const isMobile = /iphone|ipad|ipod|android/.test(ua);
+        if (isMobile) {
+
+        if (window.sidebar && window.sidebar.addPanel) {
+            // Firefox <=22
+            window.sidebar.addPanel(title, url, '');
+        } else if (window.external && ('AddFavorite' in window.external)) {
+            // IE Favorites
+            window.external.AddFavorite(url, title);
+        } else if (window.opera && window.print) {
+            // Opera <=14
+            this.title = title;
+            return true;
+        } else {
+            // Other browsers (mainly Chrome, Firefox 23+, Safari)
+            alert('이 브라우저에서는 Ctrl+D (또는 Cmd+D)를 눌러 북마크를 추가하세요.');
+        }
     }
 </script>
 
