@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seong-hoon Jung | Mobile Card</title>
-    <link rel="stylesheet" href="style.css?v=2.0">
+    <link rel="stylesheet" href="style.css?v=2.2">
 </head>
 <body>
 
 <div class="card">
-    <!-- 로고 + QR 겹치는 영역 -->
+    <!-- 로고 + QR -->
     <div class="logo-wrap">
         <img class="logo-main" src="Proofence_Logo.png?v=2" alt="Proofence Logo">
         <div id="qrcode" class="logo-qr"></div>
@@ -21,54 +21,96 @@
     <p class="role">Ontology Developer</p>
     <p class="role">010-3769-6543</p>
     <p class="role">shjung.kr@gmail.com</p>
+
+    <!-- 기기별 저장 안내 -->
     <div class="save-guide">
-            <strong>이 카드를 저장하세요!</strong><br>
-        <span class="guide-sub">브라우저의 북마크 기능을 사용해주세요.</span>
+        <strong id="saveGuideTitle">이 카드를 저장하세요</strong><br>
+        <span class="guide-sub" id="saveGuideSub">잠시만요…</span>
     </div>
 
     <div class="buttons">
         <a href="tel:010-3769-6543" class="btn">Call</a>
         <a href="mailto:shjung.kr@gmail.com" class="btn">Email</a>
-        <button class="btn" onclick="addBookmark()">북마크추가</button>
+        <button class="btn" type="button" onclick="addBookmark()">저장하기</button>
     </div>
 </div>
 
 <footer>© 2025 Seong-hoon Jung</footer>
 
-<!-- ✅ 스크립트는 항상 body 맨 아래 -->
+<!-- QRCode 라이브러리 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
-    // DOM이 다 만들어진 뒤에 실행되도록 body 끝에 배치
+/* ---------- 초기 로딩 ---------- */
+window.addEventListener("DOMContentLoaded", () => {
+    // QR 생성
     const qrTarget = document.getElementById("qrcode");
     if (qrTarget) {
+        qrTarget.innerHTML = "";
         new QRCode(qrTarget, {
             text: "https://shjung-kr.github.io/my-card",
             width: 72,
             height: 72,
+            correctLevel: QRCode.CorrectLevel.M
         });
     }
-    function addBookmark(){
-        
-        const ua = navigator.userAgent.toLowerCase();
 
-        const isMobile = /iphone|ipad|ipod|android/.test(ua);
-        if (isMobile) {
+    // 기기별 안내 표시
+    renderSaveGuide();
+});
 
-            if (window.sidebar && window.sidebar.addPanel) {
-            // Firefox <=22
-            window.sidebar.addPanel(title, url, '');
-            } else if (window.external && ('AddFavorite' in window.external)) {
-            // IE Favorites
-            window.external.AddFavorite(url, title);
-            } else if (window.opera && window.print) {
-            // Opera <=14
-            this.title = title;
-            return true;
-            } else {
-            // Other browsers (mainly Chrome, Firefox 23+, Safari)
-            alert('이 브라우저에서는 Ctrl+D (또는 Cmd+D)를 눌러 북마크를 추가하세요.');
-            }
-        }
+/* ---------- 기기 판별 ---------- */
+function detectDevice() {
+    const ua = navigator.userAgent.toLowerCase();
+    return {
+        isIOS: /iphone|ipad|ipod/.test(ua),
+        isAndroid: /android/.test(ua),
+        isMac: /macintosh|mac os x/.test(ua)
+    };
+}
+
+/* ---------- 안내 문구 자동 변경 ---------- */
+function renderSaveGuide() {
+    const { isIOS, isAndroid, isMac } = detectDevice();
+
+    const titleEl = document.getElementById("saveGuideTitle");
+    const subEl = document.getElementById("saveGuideSub");
+
+    if (isIOS) {
+        titleEl.textContent = "📌 아이폰은 ‘홈 화면에 추가’로 저장하세요";
+        subEl.innerHTML = "Safari → <b>공유(네모+↑)</b> → <b>홈 화면에 추가</b>";
+        return;
+    }
+
+    if (isAndroid) {
+        titleEl.textContent = "📌 안드로이드는 ‘홈 화면에 추가’가 가장 편해요";
+        subEl.innerHTML = "Chrome → <b>⋮ 메뉴</b> → <b>홈 화면에 추가</b>";
+        return;
+    }
+
+    titleEl.textContent = "📌 PC에서는 즐겨찾기(북마크)로 저장하세요";
+    subEl.textContent = isMac
+        ? "Cmd + D 또는 주소창 ⭐(별)"
+        : "Ctrl + D 또는 주소창 ⭐(별)";
+}
+
+/* ---------- 버튼 클릭 시 안내 ---------- */
+function addBookmark() {
+    const { isIOS, isAndroid, isMac } = detectDevice();
+
+    if (isIOS) {
+        alert("아이폰(Safari): 공유(네모+↑) → '홈 화면에 추가'");
+        return;
+    }
+    if (isAndroid) {
+        alert("안드로이드(Chrome): ⋮ 메뉴 → '홈 화면에 추가'");
+        return;
+    }
+
+    alert(isMac
+        ? "PC(Mac): Cmd + D 또는 주소창 ⭐(별)"
+        : "PC(Windows): Ctrl + D 또는 주소창 ⭐(별)"
+    );
 }
 </script>
 

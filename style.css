@@ -19,8 +19,8 @@ body {
 /* 로고 + QR 랩퍼 */
 .logo-wrap {
     position: relative;
-    width: 260px;         /* 로고 전체 폭 */
-    max-width: 70vw;      /* 모바일에서 화면 밖으로 안 나가게 */
+    width: 260px;
+    max-width: 70vw;
     margin: 0 auto 16px auto;
 }
 
@@ -30,7 +30,7 @@ body {
     display: block;
 }
 
-/* QR 코드: 로고 위에 겹치게 */
+/* QR 코드 */
 .logo-qr {
     position: absolute;
     right: 8px;
@@ -40,9 +40,23 @@ body {
     background-color: #ffffff;
     padding: 4px;
     border-radius: 8px;
+
+    /* QR 안정화 */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* 텍스트 스타일 */
+/* QR 내부 img/canvas 강제 */
+.logo-qr img,
+.logo-qr canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* 텍스트 */
 h1 {
     font-size: 22px;
     margin: 8px 0 4px 0;
@@ -59,7 +73,23 @@ h1 {
     font-size: 16px;
 }
 
-/* 버튼 영역 */
+/* 저장 안내 */
+.save-guide {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #111;
+    line-height: 1.5;
+}
+
+.guide-sub {
+    font-size: 12px;
+    color: #555;
+}
+
+/* 버튼 */
 .buttons {
     margin-top: 20px;
 }
@@ -73,21 +103,8 @@ h1 {
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
-}
-.save-guide {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #f5f5f5;
-    border-radius: 12px;
-    font-size: 14px;
-    color : #111;
-    line-height: 1.5;
-}
-
-.guide-sub {
-    font-size: 12px;
-    color: #555;
-    
+    border: none;
+    cursor: pointer;
 }
 
 /* 푸터 */
